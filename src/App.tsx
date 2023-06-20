@@ -54,17 +54,7 @@ const MyForm = () => {
     return (
         <div>
             <div className="form-container">
-                <button className="form-button" onClick={() => setOpenForm(true)}>Open Form</button>
-                <button className="delete-button" >Delete Person</button>
-                <div className="delete-input-container">
-                    <input
-                        className="delete-input"
-                        type="text"
-                        placeholder="Enter ID to delete"
-                        value={deleteId}
-                        onChange={(e) => setDeleteId(e.target.value)}
-                    />
-                </div>
+                <button className="form-button" onClick={() => setOpenForm(true)}>Add resident</button>
                 <Modal handleSubmit={() => {
                     handleCreateResidentsSubmit({name, surname})
                 }} isOpen={openForm} closeModal={() => {
