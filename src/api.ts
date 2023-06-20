@@ -15,7 +15,8 @@ export const getAllResidents = async (): Promise<IResident[] | Error> => {
                 'Content-Type': 'application/json'
             }
         });
-        return await response.json() as Promise<IResident[]>
+        const parsedResponse = await response.json()
+        return JSON.parse(parsedResponse.body as string) as Promise<IResident[]>
     } catch (e) {
         console.error(e);
         return e as Error

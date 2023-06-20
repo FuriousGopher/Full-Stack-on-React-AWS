@@ -16,14 +16,11 @@ const MyForm = () => {
     const [residentToDelete, setResidentToDelete] = useState<IResident | null>(null);
     const [isListUpdating, setIsListUpdating] = useState(false);
 
-    const [residents, setResidents] = useState([
-        {id: "908e7eb5-a9fd-43e6-9730-434149fe74fa", name: 'John', surname: 'Doe', createdAt: '2021-01-01'},
-        {id: "2", name: 'Jane', surname: 'Smith', createdAt: '2021-02-05'},
-        {id: "3", name: 'Alice', surname: 'Johnson', createdAt: '2021-03-10'},
-    ]);
+    const [residents, setResidents] = useState<IResident[]>([]);
 
     const fetchAllResidents = async () => {
         const residents = await getAllResidents() as IResident[];
+        console.log(residents)
        if (residents?.length) {
            setResidents(residents)
        }
