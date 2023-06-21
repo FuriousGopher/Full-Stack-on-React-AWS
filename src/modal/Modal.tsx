@@ -1,7 +1,8 @@
 import React, { useState, ReactElement, ReactNode } from 'react';
+import { Modal, Box, Typography, Button } from '@mui/material';
 import './Modal.css';
 
-interface ModalProps {
+interface CustomModalProps {
     handleSubmit: () => void;
     isOpen: boolean;
     closeModal: () => void;
@@ -9,7 +10,13 @@ interface ModalProps {
     children?: ReactNode;
 }
 
-const Modal = ({ handleSubmit, closeModal, isOpen, title, children }: ModalProps) => {
+const CustomModal = ({
+                         handleSubmit,
+                         closeModal,
+                         isOpen,
+                         title,
+                         children,
+                     }: CustomModalProps) => {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleModalSubmit = () => {
@@ -47,25 +54,25 @@ const Modal = ({ handleSubmit, closeModal, isOpen, title, children }: ModalProps
     };
 
     return (
-        <div className="modal-container">
-            {isOpen && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <h2>{title}</h2>
-                        <form className="input-form" onSubmit={handleFormSubmit}>
-                            {renderChildren()}
-                            <button className="form-submit" type="submit">
-                                Submit
-                            </button>
-                        </form>
-                        <button className="close-button" onClick={handleModalClose}>
+        <Modal open={isOpen} onClose={handleModalClose}>
+            <Box className="modal-container">
+                <Typography variant="h5" component="h2" gutterBottom>
+                    {title}
+                </Typography>
+                <form className="input-form" onSubmit={handleFormSubmit}>
+                    {renderChildren()}
+                    <div className="button-container">
+                        <Button variant="contained" type="submit">
+                            Submit
+                        </Button>
+                        <Button className="close-button" onClick={handleModalClose}>
                             Close
-                        </button>
+                        </Button>
                     </div>
-                </div>
-            )}
-        </div>
+                </form>
+            </Box>
+        </Modal>
     );
 };
 
-export default Modal;
+export default CustomModal;
