@@ -26,6 +26,10 @@
     margin-bottom: 16px;
 }
 
+.add {
+    font-size: 100px;
+}
+
 .modal-container {
     display: flex;
     flex-direction: column;

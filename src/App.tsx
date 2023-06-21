@@ -12,10 +12,10 @@ import ResidentsTable from './ResidentsTable/ResidentsTable';
 import {
     Button,
     TextField,
-    Typography,
     Container,
     Grid,
 } from '@mui/material';
+import {Add} from "@mui/icons-material";
 
 const MyForm = () => {
     const [openForm, setOpenForm] = useState(false);
@@ -69,7 +69,7 @@ const MyForm = () => {
         <Container>
             <Grid container spacing={2}>
                 <Grid item xs={12} md={4}>
-                    <Button variant="contained" onClick={() => setOpenForm(true)}>
+                    <Button variant="contained" onClick={() => setOpenForm(true)} startIcon={<Add/>} className="add">
                         Add resident
                     </Button>
                     <Modal

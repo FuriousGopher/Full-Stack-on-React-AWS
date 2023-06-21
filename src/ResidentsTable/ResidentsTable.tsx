@@ -1,6 +1,6 @@
 import React from 'react';
 import './ResidentsTable.css';
-import { IResident } from '../api';
+import {IResident} from '../api';
 import TableContainer from '@mui/material/TableContainer';
 import Table from '@mui/material/Table';
 import TableHead from '@mui/material/TableHead';
@@ -9,7 +9,7 @@ import TableCell from '@mui/material/TableCell';
 import TableBody from '@mui/material/TableBody';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-import {Update} from "@mui/icons-material";
+import {CreateRounded} from "@mui/icons-material";
 
 interface TableProps {
     residents: IResident[];
@@ -24,19 +24,19 @@ const ResidentsTable = ({
                         }: TableProps) => {
     return (
         <TableContainer component="div" className="table-container">
-            <Table sx={{ minWidth: 650 }}>
+            <Table sx={{minWidth: 650}}>
                 <TableHead>
                     <TableRow>
-                        <TableCell sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+                        <TableCell sx={{fontWeight: 'bold', color: 'primary.main'}}>
                             Name
                         </TableCell>
-                        <TableCell sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+                        <TableCell sx={{fontWeight: 'bold', color: 'primary.main'}}>
                             Surname
                         </TableCell>
-                        <TableCell sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+                        <TableCell sx={{fontWeight: 'bold', color: 'primary.main'}}>
                             Created At
                         </TableCell>
-                        <TableCell sx={{ fontWeight: 'bold', color: 'primary.main' }}>
+                        <TableCell sx={{fontWeight: 'bold', color: 'primary.main'}}>
                             Action
                         </TableCell>
                     </TableRow>
@@ -51,19 +51,19 @@ const ResidentsTable = ({
                                 <Button
                                     variant="contained"
                                     color="success"
-                                    startIcon={<Update />}
+                                    startIcon={<CreateRounded/>}
                                     onClick={() => handleUpdate(person)}
-                                    sx={{ ml: 2 }}
+                                    sx={{ml: 2}}
                                 >
                                     Update
                                 </Button>
                                 <Button
                                     variant="contained"
                                     color="info"
-                                    startIcon={<DeleteIcon />}
+                                    startIcon={<DeleteIcon/>}
                                     onClick={() => handleDelete(person)}
                                     className="custom-button"
-                                    sx={{ ml: 2 }}
+                                    sx={{ml: 2}}
                                 >
                                     Delete
                                 </Button>
