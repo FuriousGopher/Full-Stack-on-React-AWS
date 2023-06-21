@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import {Add} from "@mui/icons-material";
 
-const MyForm = () => {
+const App = () => {
     const [openForm, setOpenForm] = useState(false);
     const [name, setName] = useState('');
     const [surname, setSurname] = useState('');
@@ -67,7 +67,7 @@ const MyForm = () => {
 
     return (
         <Container>
-            <Grid container spacing={2}>
+            <div style={{display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', padding: '20px'}}>
                 <Grid item xs={12} md={4}>
                     <Button variant="contained" onClick={() => setOpenForm(true)} startIcon={<Add/>} className="add">
                         Add resident
@@ -92,6 +92,7 @@ const MyForm = () => {
                                 className="form-input"
                                 type="text"
                                 placeholder="Name"
+                                style={{marginBottom: '5px'}}
                                 value={name}
                                 onChange={(e) => setName(e.target.value)}
                                 fullWidth
@@ -126,6 +127,7 @@ const MyForm = () => {
                                 className="form-input"
                                 type="text"
                                 placeholder="Name"
+                                style={{marginBottom: '5px'}}
                                 value={nameToUpdate}
                                 onChange={(e) => setNameToUpdate(e.target.value)}
                                 fullWidth
@@ -162,9 +164,9 @@ const MyForm = () => {
                         }}
                     />
                 </Grid>
-            </Grid>
+            </div>
         </Container>
     );
 };
 
-export default MyForm;
+export default App;

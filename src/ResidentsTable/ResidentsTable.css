@@ -1,7 +1,7 @@
 .table-container {
     width: 100%;
     margin-top: 20px;
-    background-color: #D7D7D7 ;
+    background-color: rgba(215, 215, 215, 0.05);
 }
 
 .custom-button {
