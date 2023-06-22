@@ -34,4 +34,4 @@ This project is a Residents Management System built using React for the frontend
 
 ### Credits
 
-This project was created by Ivan Kabar. It utilizes various AWS services and open-source libraries.
+This project was created by Ivan Kabar.
